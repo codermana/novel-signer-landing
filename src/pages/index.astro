@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ThemeToggle from '../components/ThemeToggle';
+import ThemeToggle from '../components/ThemeToggle.astro';
 import Features from '../components/Features';
 import { ArrowRight, CheckCircle2, Download, Terminal, Settings } from 'lucide-react';
 ---
@@ -15,7 +15,7 @@ import { ArrowRight, CheckCircle2, Download, Terminal, Settings } from 'lucide-r
 			<div class="flex items-center gap-6">
 				<a href="#features" class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Features</a>
 				<a href="#workflow" class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Workflow</a>
-				<ThemeToggle client:load />
+				<ThemeToggle />
 				<a href="https://github.com/cm-tech/novel-signer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold hover:bg-slate-800 dark:hover:bg-slate-100 transition-all">
 					<Download className="w-4 h-4" />
 					Get App
@@ -50,7 +50,7 @@ import { ArrowRight, CheckCircle2, Download, Terminal, Settings } from 'lucide-r
 						See Workflow
 						<ArrowRight className="w-5 h-5" />
 					</a>
-					<a href="#features" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold hover:bg-slate-50 dark:hover:bg-slate-750 transition-all">
+					<a href="#features" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-all">
 						Explore Features
 					</a>
 				</div>
