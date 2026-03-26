@@ -1,535 +1,262 @@
 ---
-const features = [
-  {
-    eyebrow: "Credential flexibility",
-    title: "Token and certificate workflows in one desktop tool",
-    description:
-      "Novel Signer supports PKCS#11 hardware tokens and P12 or PFX certificates so regulated signing flows do not need separate utilities.",
-  },
-  {
-    eyebrow: "Placement control",
-    title: "Visible signatures with precise preview",
-    description:
-      "Review page placement, signature dimensions, and appearance before the file is signed and distributed.",
-  },
-  {
-    eyebrow: "Throughput",
-    title: "Single, multi-file, and directory signing",
-    description:
-      "Handle one document or a whole working set with progress visibility, structured output, and clear failure reporting.",
-  },
-];
-
-const workflow = [
-  {
-    step: "01",
-    title: "Connect the credential",
-    description: "Use a USB token or load a certificate file, then validate access directly from the signing workspace.",
-  },
-  {
-    step: "02",
-    title: "Choose the source PDFs",
-    description: "Sign one file, a selected batch, or an entire directory depending on the volume of work.",
-  },
-  {
-    step: "03",
-    title: "Review and execute",
-    description: "Set the visible signature, confirm the request, and export finished PDFs with trackable results.",
-  },
-];
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle';
+import Features from '../components/Features';
+import { ArrowRight, CheckCircle2, Download, Terminal, Settings } from 'lucide-react';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Novel Signer | Desktop PDF Signing</title>
-    <meta
-      name="description"
-      content="Novel Signer is a desktop PDF signing application with token support, certificate workflows, visible signature preview, and batch signing."
-    />
-  </head>
-  <body>
-    <main class="page-shell">
-      <section class="hero">
-        <div class="hero__glow hero__glow--amber"></div>
-        <div class="hero__glow hero__glow--cyan"></div>
-        <header class="hero__header">
-          <div>
-            <p class="brand">Novel Signer</p>
-            <p class="brand-copy">
-              Desktop PDF signing for contracts, approvals, and compliance workflows that need predictable output.
-            </p>
-          </div>
-          <nav class="hero__actions">
-            <a href="#capabilities" class="button button--secondary">Capabilities</a>
-            <a href="#workflow" class="button button--primary">See workflow</a>
-          </nav>
-        </header>
+<Layout title="Novel Signer | Desktop PDF Signing">
+	<nav class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 bg-white/70 dark:bg-slate-900/70">
+		<div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+			<div class="flex items-center gap-2">
+				<img src="/logo.svg" alt="Novel Signer Logo" class="w-8 h-8" />
+				<span class="font-bold text-xl tracking-tight bg-gradient-to-r from-indigo-600 to-cyan-500 bg-clip-text text-transparent">Novel Signer</span>
+			</div>
+			<div class="flex items-center gap-6">
+				<a href="#features" class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Features</a>
+				<a href="#workflow" class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Workflow</a>
+				<ThemeToggle client:load />
+				<a href="https://github.com/cm-tech/novel-signer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold hover:bg-slate-800 dark:hover:bg-slate-100 transition-all">
+					<Download class="w-4 h-4" />
+					Get App
+				</a>
+			</div>
+		</div>
+	</nav>
 
-        <div class="hero__content">
-          <div class="hero__copy">
-            <p class="eyebrow">Secure PDF execution</p>
-            <h1>Sign regulated PDF workflows without the usual desktop friction.</h1>
-            <p class="lede">
-              Novel Signer combines hardware token support, certificate-based signing, visible signature preview, and
-              batch processing in one focused desktop application.
-            </p>
+	<main class="pt-32 pb-20 overflow-hidden">
+		<!-- Hero Section -->
+		<section class="max-w-7xl mx-auto px-4 relative">
+			<div class="absolute -top-40 -left-40 w-80 h-80 bg-indigo-500/10 blur-[100px] rounded-full"></div>
+			<div class="absolute -top-40 -right-40 w-80 h-80 bg-cyan-500/10 blur-[100px] rounded-full"></div>
 
-            <div class="hero__stats">
-              <article>
-                <strong>3 signing modes</strong>
-                <span>Single file, multi-file, or directory execution.</span>
-              </article>
-              <article>
-                <strong>Preview before export</strong>
-                <span>Review placement and signature appearance in-app.</span>
-              </article>
-              <article>
-                <strong>Batch result tracking</strong>
-                <span>See success, skip, and failure states clearly.</span>
-              </article>
-            </div>
-          </div>
+			<div class="text-center mb-16 relative z-10">
+				<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider mb-6 border border-indigo-500/20">
+					<span class="relative flex h-2 w-2">
+						<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+						<span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+					</span>
+					Secure PDF Execution
+				</div>
+				<h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight dark:text-white leading-[1.1]">
+					Sign regulated PDF workflows <br class="hidden md:block" />
+					<span class="bg-gradient-to-r from-indigo-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">without the desktop friction.</span>
+				</h1>
+				<p class="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10">
+					Novel Signer combines hardware token support, certificate-based signing, visible signature preview, and batch processing in one focused desktop application.
+				</p>
+				<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+					<a href="#workflow" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-bold shadow-xl shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+						See Workflow
+						<ArrowRight class="w-5 h-5" />
+					</a>
+					<a href="#features" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold hover:bg-slate-50 dark:hover:bg-slate-750 transition-all">
+						Explore Features
+					</a>
+				</div>
+			</div>
 
-          <aside class="workflow-card" id="workflow">
-            <p class="workflow-card__eyebrow">Workflow snapshot</p>
-            <div class="workflow-card__steps">
-              {workflow.map((item) => (
-                <article class="workflow-card__step">
-                  <span>{item.step}</span>
-                  <div>
-                    <h2>{item.title}</h2>
-                    <p>{item.description}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <div class="workflow-card__footer">
-              <p class="workflow-card__label">Best fit</p>
-              <p>Teams handling repeated signing work across desktop environments with token-backed credentials.</p>
-            </div>
-          </aside>
-        </div>
-      </section>
+			<!-- Screenshot Preview -->
+			<div class="relative group">
+				<div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-cyan-500 to-emerald-500 rounded-[2rem] blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+				<div class="relative bg-white/50 dark:bg-slate-800/50 p-2 rounded-[2rem] border border-white/20 dark:border-slate-700/20 backdrop-blur-sm shadow-2xl">
+					<img src="/screenshot.png" alt="Novel Signer Application Interface" class="rounded-[1.5rem] w-full shadow-inner" />
 
-      <section class="capabilities" id="capabilities">
-        {features.map((feature) => (
-          <article class="capability-card">
-            <p>{feature.eyebrow}</p>
-            <h2>{feature.title}</h2>
-            <p>{feature.description}</p>
-          </article>
-        ))}
-      </section>
+					<!-- UI Mockup Overlay (Floating Cards) -->
+					<div class="absolute -bottom-10 -left-10 hidden xl:block p-6 rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 max-w-xs animate-bounce-slow">
+						<div class="flex items-center gap-3 mb-4">
+							<div class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+								<CheckCircle2 class="w-6 h-6" />
+							</div>
+							<div>
+								<p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Status</p>
+								<p class="text-sm font-bold dark:text-white">Batch Ready</p>
+							</div>
+						</div>
+						<p class="text-sm text-slate-500">All 142 documents validated and ready for PKCS#11 execution.</p>
+					</div>
 
-      <section class="closing-panel">
-        <div>
-          <p class="eyebrow eyebrow--muted">Novel Signer</p>
-          <h2>Built for teams that need signing to be repeatable, controlled, and fast to operate.</h2>
-        </div>
-        <a href="#top" class="button button--primary">Back to top</a>
-      </section>
-    </main>
-  </body>
-</html>
+					<div class="absolute -top-10 -right-10 hidden xl:block p-6 rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 max-w-xs animate-float">
+						<div class="flex items-center gap-3 mb-4">
+							<div class="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-500">
+								<Settings class="w-6 h-6" />
+							</div>
+							<div>
+								<p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Mode</p>
+								<p class="text-sm font-bold dark:text-white">Hardware Token</p>
+							</div>
+						</div>
+						<p class="text-sm text-slate-500">SafeNet eToken 5110 detected on /dev/usb12.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Features Section -->
+		<section id="features" class="max-w-7xl mx-auto px-4 mt-40">
+			<div class="text-center mb-16">
+				<h2 class="text-4xl font-bold mb-4 dark:text-white">Built for professional workflows</h2>
+				<p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+					Designed to replace fragmented signing utilities with a single, high-performance desktop environment.
+				</p>
+			</div>
+			<Features />
+		</section>
+
+		<!-- Workflow Section -->
+		<section id="workflow" class="max-w-7xl mx-auto px-4 mt-40">
+			<div class="bg-slate-900 dark:bg-slate-950 rounded-[3rem] p-8 md:p-16 relative overflow-hidden">
+				<div class="absolute top-0 right-0 w-1/2 h-full bg-indigo-500/10 blur-[120px]"></div>
+				<div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+					<div>
+						<p class="text-indigo-400 font-bold uppercase tracking-widest text-sm mb-4">Execution Process</p>
+						<h2 class="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">From credential to export in three steps.</h2>
+						<div class="space-y-8">
+							<div class="flex gap-6">
+								<div class="flex-shrink-0 w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white font-bold">01</div>
+								<div>
+									<h3 class="text-xl font-bold text-white mb-2">Connect the Credential</h3>
+									<p class="text-slate-400">Use a USB token or load a certificate file, then validate access directly from the signing workspace.</p>
+								</div>
+							</div>
+							<div class="flex gap-6">
+								<div class="flex-shrink-0 w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white font-bold">02</div>
+								<div>
+									<h3 class="text-xl font-bold text-white mb-2">Choose Source PDFs</h3>
+									<p class="text-slate-400">Sign one file, a selected batch, or an entire directory depending on the volume of work.</p>
+								</div>
+							</div>
+							<div class="flex gap-6">
+								<div class="flex-shrink-0 w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white font-bold">03</div>
+								<div>
+									<h3 class="text-xl font-bold text-white mb-2">Review and Execute</h3>
+									<p class="text-slate-400">Set the visible signature, confirm the request, and export finished PDFs with trackable results.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Best Fit Badge -->
+						<div class="mt-12 p-6 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 max-w-lg">
+							<div class="flex items-center gap-3 mb-2">
+								<span class="px-2 py-0.5 rounded-md bg-indigo-500 text-[10px] font-bold text-white uppercase tracking-wider">Best Fit</span>
+								<p class="text-indigo-400 font-bold text-sm">Enterprise Desktop Environments</p>
+							</div>
+							<p class="text-slate-400 text-sm leading-relaxed">
+								Novel Signer is the perfect fit for teams handling repeated signing work across desktop environments with hardware-backed credentials.
+							</p>
+						</div>
+					</div>
+					<div class="relative">
+						<div class="aspect-square rounded-3xl bg-white/5 border border-white/10 p-8 backdrop-blur-sm flex flex-col justify-center">
+							<div class="space-y-4">
+								<div class="h-2 w-1/2 bg-white/20 rounded-full"></div>
+								<div class="h-12 w-full bg-white/10 rounded-xl flex items-center px-4 gap-3">
+									<div class="w-6 h-6 rounded bg-emerald-500"></div>
+									<div class="h-2 w-1/3 bg-white/20 rounded-full"></div>
+								</div>
+								<div class="h-12 w-full bg-white/5 rounded-xl flex items-center px-4 gap-3">
+									<div class="w-6 h-6 rounded bg-indigo-500"></div>
+									<div class="h-2 w-2/3 bg-white/20 rounded-full"></div>
+								</div>
+								<div class="h-12 w-full bg-white/10 rounded-xl flex items-center px-4 gap-3 border border-indigo-500/30">
+									<Terminal class="w-5 h-5 text-indigo-400" />
+									<div class="h-2 w-1/2 bg-white/20 rounded-full"></div>
+								</div>
+							</div>
+							<div class="mt-8 pt-8 border-t border-white/10">
+								<div class="flex justify-between items-center mb-4">
+									<span class="text-white font-bold">Signing Progress</span>
+									<span class="text-indigo-400 font-bold">84%</span>
+								</div>
+								<div class="h-3 w-full bg-white/10 rounded-full overflow-hidden">
+									<div class="h-full w-[84%] bg-gradient-to-r from-indigo-500 to-cyan-500"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="max-w-7xl mx-auto px-4 mt-40 text-center">
+			<div class="relative py-24 px-8 rounded-[3rem] bg-gradient-to-br from-indigo-600 to-cyan-500 overflow-hidden shadow-2xl">
+				<div class="absolute inset-0 bg-grid-white/10 [mask-image:radial-gradient(white,transparent)]"></div>
+				<div class="relative z-10">
+					<h2 class="text-4xl md:text-6xl font-extrabold text-white mb-6">Ready to streamline your signing?</h2>
+					<p class="text-xl text-indigo-50 max-w-2xl mx-auto mb-10 leading-relaxed">
+						Download Novel Signer today and experience the future of professional PDF execution.
+					</p>
+					<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+						<a href="https://github.com/cm-tech/novel-signer" class="w-full sm:w-auto px-10 py-5 rounded-2xl bg-white text-indigo-600 font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+							Download for Desktop
+							<Download class="w-6 h-6" />
+						</a>
+						<a href="#features" class="w-full sm:w-auto px-10 py-5 rounded-2xl bg-indigo-700/30 text-white border border-white/20 font-bold text-lg hover:bg-indigo-700/40 transition-all">
+							View Documentation
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
+		<div class="max-w-7xl mx-auto px-4">
+			<div class="grid md:grid-cols-4 gap-12 mb-16">
+				<div class="col-span-2">
+					<div class="flex items-center gap-2 mb-6">
+						<img src="/logo.svg" alt="Novel Signer Logo" class="w-6 h-6" />
+						<span class="font-bold text-lg tracking-tight dark:text-white">Novel Signer</span>
+					</div>
+					<p class="text-slate-500 dark:text-slate-400 max-w-sm leading-relaxed">
+						The focused desktop environment for professional PDF signing workflows. Built for speed, security, and compliance.
+					</p>
+				</div>
+				<div>
+					<h4 class="font-bold mb-6 dark:text-white uppercase text-xs tracking-widest">Product</h4>
+					<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+						<li><a href="#features" class="hover:text-indigo-600 transition-colors">Features</a></li>
+						<li><a href="#workflow" class="hover:text-indigo-600 transition-colors">Workflow</a></li>
+						<li><a href="#" class="hover:text-indigo-600 transition-colors">Security</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="font-bold mb-6 dark:text-white uppercase text-xs tracking-widest">Connect</h4>
+					<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+						<li><a href="https://github.com/cm-tech/novel-signer" class="hover:text-indigo-600 transition-colors">GitHub</a></li>
+						<li><a href="#" class="hover:text-indigo-600 transition-colors">Documentation</a></li>
+						<li><a href="#" class="hover:text-indigo-600 transition-colors">Support</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:row items-center justify-between gap-4">
+				<p class="text-sm text-slate-500 dark:text-slate-400">© {new Date().getFullYear()} CoderMana Technologies Private Limited. All rights reserved.</p>
+				<div class="flex gap-8 text-sm text-slate-500 dark:text-slate-400">
+					<a href="#" class="hover:text-indigo-600 transition-colors">Privacy Policy</a>
+					<a href="#" class="hover:text-indigo-600 transition-colors">Terms of Service</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+</Layout>
 
 <style>
-  :root {
-    color-scheme: light;
-    --bg: #f8f7f2;
-    --surface: rgba(255, 255, 255, 0.82);
-    --surface-strong: #0f172a;
-    --text: #0f172a;
-    --muted: #475569;
-    --border: rgba(148, 163, 184, 0.28);
-    --amber: #f59e0b;
-    --cyan: #06b6d4;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
-    color: var(--text);
-    background:
-      radial-gradient(circle at top left, rgba(245, 158, 11, 0.18), transparent 28%),
-      radial-gradient(circle at top right, rgba(6, 182, 212, 0.18), transparent 24%),
-      linear-gradient(180deg, #fffdf7 0%, #f8fafc 46%, #eef6ff 100%);
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .page-shell {
-    width: min(1240px, calc(100vw - 2rem));
-    margin: 0 auto;
-    padding: 1rem 0 3rem;
-  }
-
-  .hero {
-    position: relative;
-    overflow: hidden;
-    padding: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.72);
-    border-radius: 2rem;
-    background: var(--surface);
-    box-shadow: 0 30px 100px rgba(15, 23, 42, 0.12);
-    backdrop-filter: blur(18px);
-  }
-
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
-    background-size: 34px 34px;
-    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 92%);
-    pointer-events: none;
-  }
-
-  .hero__glow {
-    position: absolute;
-    border-radius: 999px;
-    filter: blur(16px);
-    opacity: 0.75;
-    animation: float 16s ease-in-out infinite;
-  }
-
-  .hero__glow--amber {
-    top: 6%;
-    left: -4%;
-    width: 18rem;
-    height: 18rem;
-    background: rgba(245, 158, 11, 0.22);
-  }
-
-  .hero__glow--cyan {
-    right: -6%;
-    bottom: 10%;
-    width: 20rem;
-    height: 20rem;
-    background: rgba(6, 182, 212, 0.2);
-    animation-delay: -5s;
-  }
-
-  .hero__header,
-  .hero__content,
-  .capabilities,
-  .closing-panel {
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero__header {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-  }
-
-  .brand {
-    margin: 0;
-    font-size: 0.95rem;
-    font-weight: 700;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  .brand-copy {
-    margin: 0.75rem 0 0;
-    max-width: 40rem;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-
-  .hero__actions {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-
-  .button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.9rem 1.35rem;
-    border-radius: 999px;
-    font-weight: 700;
-    transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
-  }
-
-  .button:hover {
-    transform: translateY(-1px);
-  }
-
-  .button--primary {
-    color: white;
-    background: var(--surface-strong);
-  }
-
-  .button--secondary {
-    border: 1px solid rgba(148, 163, 184, 0.42);
-    background: rgba(255, 255, 255, 0.76);
-  }
-
-  .hero__content {
-    display: grid;
-    gap: 2rem;
-    padding-top: 2.5rem;
-  }
-
-  .eyebrow {
-    margin: 0;
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: #b45309;
-  }
-
-  .eyebrow--muted {
-    color: #64748b;
-  }
-
-  .hero__copy h1 {
-    margin: 1rem 0 0;
-    max-width: 16ch;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(3.4rem, 8vw, 6.8rem);
-    line-height: 0.95;
-    letter-spacing: -0.05em;
-  }
-
-  .lede {
-    margin: 1.5rem 0 0;
-    max-width: 44rem;
-    font-size: 1.15rem;
-    line-height: 1.9;
-    color: var(--muted);
-  }
-
-  .hero__stats {
-    display: grid;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  .hero__stats article,
-  .capability-card,
-  .workflow-card__step,
-  .closing-panel {
-    border: 1px solid var(--border);
-    border-radius: 1.6rem;
-  }
-
-  .hero__stats article {
-    padding: 1.2rem 1.25rem;
-    background: rgba(255, 255, 255, 0.74);
-    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.05);
-  }
-
-  .hero__stats strong,
-  .capability-card h2,
-  .workflow-card__step h2,
-  .closing-panel h2 {
-    display: block;
-    font-size: 1.2rem;
-    line-height: 1.3;
-  }
-
-  .hero__stats span,
-  .capability-card p:last-child,
-  .workflow-card__step p,
-  .workflow-card__footer p:last-child {
-    display: block;
-    margin-top: 0.55rem;
-    color: var(--muted);
-    line-height: 1.75;
-  }
-
-  .workflow-card {
-    padding: 1.5rem;
-    border-radius: 2rem;
-    background: #0f172a;
-    color: white;
-    box-shadow: 0 30px 80px rgba(15, 23, 42, 0.28);
-  }
-
-  .workflow-card__eyebrow,
-  .workflow-card__label {
-    margin: 0;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: #67e8f9;
-  }
-
-  .workflow-card__steps {
-    display: grid;
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-
-  .workflow-card__step {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1rem;
-    padding: 1.2rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
-  }
-
-  .workflow-card__step span {
-    font-size: 0.82rem;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    color: #67e8f9;
-  }
-
-  .workflow-card__step h2 {
-    margin: 0;
-    font-size: 1.1rem;
-  }
-
-  .workflow-card__step p {
-    color: rgba(226, 232, 240, 0.82);
-  }
-
-  .workflow-card__footer {
-    margin-top: 1.5rem;
-    padding: 1.25rem;
-    border-radius: 1.6rem;
-    background: rgba(6, 182, 212, 0.1);
-    border: 1px solid rgba(103, 232, 249, 0.16);
-  }
-
-  .capabilities {
-    display: grid;
-    gap: 1rem;
-    margin-top: 1.25rem;
-  }
-
-  .capability-card {
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.05);
-  }
-
-  .capability-card p:first-child {
-    margin: 0;
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: #64748b;
-  }
-
-  .capability-card h2 {
-    margin: 1rem 0 0;
-    font-size: 1.7rem;
-    letter-spacing: -0.04em;
-  }
-
-  .closing-panel {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 1.25rem;
-    padding: 1.5rem;
-    background: linear-gradient(135deg, rgba(255, 251, 235, 0.92), rgba(240, 249, 255, 0.95));
-    box-shadow: 0 18px 38px rgba(15, 23, 42, 0.06);
-  }
-
-  .closing-panel h2 {
-    margin: 0.8rem 0 0;
-    max-width: 34rem;
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    letter-spacing: -0.04em;
-  }
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translate3d(0, 0, 0);
-    }
-
-    50% {
-      transform: translate3d(0, -18px, 0);
-    }
-  }
-
-  @media (min-width: 900px) {
-    .hero {
-      padding: 2rem;
-    }
-
-    .hero__content {
-      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-      align-items: start;
-    }
-
-    .hero__stats,
-    .capabilities {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-
-  @media (max-width: 899px) {
-    .hero__header,
-    .closing-panel {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .hero__copy h1 {
-      max-width: none;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .page-shell {
-      width: min(100vw - 1rem, 100%);
-      padding: 0.5rem 0 1.5rem;
-    }
-
-    .hero {
-      padding: 1.25rem;
-      border-radius: 1.5rem;
-    }
-
-    .workflow-card,
-    .capability-card,
-    .closing-panel {
-      border-radius: 1.3rem;
-    }
-
-    .hero__actions {
-      width: 100%;
-    }
-
-    .button {
-      width: 100%;
-    }
-  }
+	@keyframes bounce-slow {
+		0%, 100% { transform: translateY(-5%); }
+		50% { transform: translateY(5%); }
+	}
+	@keyframes float {
+		0%, 100% { transform: translate(0, 0); }
+		50% { transform: translate(5px, -10px); }
+	}
+	.animate-bounce-slow {
+		animation: bounce-slow 4s ease-in-out infinite;
+	}
+	.animate-float {
+		animation: float 6s ease-in-out infinite;
+	}
+	.bg-grid-white\/10 {
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.1)'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
+	}
 </style>
