@@ -1,0 +1,535 @@
+---
+const features = [
+  {
+    eyebrow: "Credential flexibility",
+    title: "Token and certificate workflows in one desktop tool",
+    description:
+      "Novel Signer supports PKCS#11 hardware tokens and P12 or PFX certificates so regulated signing flows do not need separate utilities.",
+  },
+  {
+    eyebrow: "Placement control",
+    title: "Visible signatures with precise preview",
+    description:
+      "Review page placement, signature dimensions, and appearance before the file is signed and distributed.",
+  },
+  {
+    eyebrow: "Throughput",
+    title: "Single, multi-file, and directory signing",
+    description:
+      "Handle one document or a whole working set with progress visibility, structured output, and clear failure reporting.",
+  },
+];
+
+const workflow = [
+  {
+    step: "01",
+    title: "Connect the credential",
+    description: "Use a USB token or load a certificate file, then validate access directly from the signing workspace.",
+  },
+  {
+    step: "02",
+    title: "Choose the source PDFs",
+    description: "Sign one file, a selected batch, or an entire directory depending on the volume of work.",
+  },
+  {
+    step: "03",
+    title: "Review and execute",
+    description: "Set the visible signature, confirm the request, and export finished PDFs with trackable results.",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Novel Signer | Desktop PDF Signing</title>
+    <meta
+      name="description"
+      content="Novel Signer is a desktop PDF signing application with token support, certificate workflows, visible signature preview, and batch signing."
+    />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero__glow hero__glow--amber"></div>
+        <div class="hero__glow hero__glow--cyan"></div>
+        <header class="hero__header">
+          <div>
+            <p class="brand">Novel Signer</p>
+            <p class="brand-copy">
+              Desktop PDF signing for contracts, approvals, and compliance workflows that need predictable output.
+            </p>
+          </div>
+          <nav class="hero__actions">
+            <a href="#capabilities" class="button button--secondary">Capabilities</a>
+            <a href="#workflow" class="button button--primary">See workflow</a>
+          </nav>
+        </header>
+
+        <div class="hero__content">
+          <div class="hero__copy">
+            <p class="eyebrow">Secure PDF execution</p>
+            <h1>Sign regulated PDF workflows without the usual desktop friction.</h1>
+            <p class="lede">
+              Novel Signer combines hardware token support, certificate-based signing, visible signature preview, and
+              batch processing in one focused desktop application.
+            </p>
+
+            <div class="hero__stats">
+              <article>
+                <strong>3 signing modes</strong>
+                <span>Single file, multi-file, or directory execution.</span>
+              </article>
+              <article>
+                <strong>Preview before export</strong>
+                <span>Review placement and signature appearance in-app.</span>
+              </article>
+              <article>
+                <strong>Batch result tracking</strong>
+                <span>See success, skip, and failure states clearly.</span>
+              </article>
+            </div>
+          </div>
+
+          <aside class="workflow-card" id="workflow">
+            <p class="workflow-card__eyebrow">Workflow snapshot</p>
+            <div class="workflow-card__steps">
+              {workflow.map((item) => (
+                <article class="workflow-card__step">
+                  <span>{item.step}</span>
+                  <div>
+                    <h2>{item.title}</h2>
+                    <p>{item.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div class="workflow-card__footer">
+              <p class="workflow-card__label">Best fit</p>
+              <p>Teams handling repeated signing work across desktop environments with token-backed credentials.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="capabilities" id="capabilities">
+        {features.map((feature) => (
+          <article class="capability-card">
+            <p>{feature.eyebrow}</p>
+            <h2>{feature.title}</h2>
+            <p>{feature.description}</p>
+          </article>
+        ))}
+      </section>
+
+      <section class="closing-panel">
+        <div>
+          <p class="eyebrow eyebrow--muted">Novel Signer</p>
+          <h2>Built for teams that need signing to be repeatable, controlled, and fast to operate.</h2>
+        </div>
+        <a href="#top" class="button button--primary">Back to top</a>
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f8f7f2;
+    --surface: rgba(255, 255, 255, 0.82);
+    --surface-strong: #0f172a;
+    --text: #0f172a;
+    --muted: #475569;
+    --border: rgba(148, 163, 184, 0.28);
+    --amber: #f59e0b;
+    --cyan: #06b6d4;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(circle at top left, rgba(245, 158, 11, 0.18), transparent 28%),
+      radial-gradient(circle at top right, rgba(6, 182, 212, 0.18), transparent 24%),
+      linear-gradient(180deg, #fffdf7 0%, #f8fafc 46%, #eef6ff 100%);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .page-shell {
+    width: min(1240px, calc(100vw - 2rem));
+    margin: 0 auto;
+    padding: 1rem 0 3rem;
+  }
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 2rem;
+    background: var(--surface);
+    box-shadow: 0 30px 100px rgba(15, 23, 42, 0.12);
+    backdrop-filter: blur(18px);
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+    background-size: 34px 34px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 92%);
+    pointer-events: none;
+  }
+
+  .hero__glow {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(16px);
+    opacity: 0.75;
+    animation: float 16s ease-in-out infinite;
+  }
+
+  .hero__glow--amber {
+    top: 6%;
+    left: -4%;
+    width: 18rem;
+    height: 18rem;
+    background: rgba(245, 158, 11, 0.22);
+  }
+
+  .hero__glow--cyan {
+    right: -6%;
+    bottom: 10%;
+    width: 20rem;
+    height: 20rem;
+    background: rgba(6, 182, 212, 0.2);
+    animation-delay: -5s;
+  }
+
+  .hero__header,
+  .hero__content,
+  .capabilities,
+  .closing-panel {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero__header {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  }
+
+  .brand {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .brand-copy {
+    margin: 0.75rem 0 0;
+    max-width: 40rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.35rem;
+    border-radius: 999px;
+    font-weight: 700;
+    transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+  }
+
+  .button:hover {
+    transform: translateY(-1px);
+  }
+
+  .button--primary {
+    color: white;
+    background: var(--surface-strong);
+  }
+
+  .button--secondary {
+    border: 1px solid rgba(148, 163, 184, 0.42);
+    background: rgba(255, 255, 255, 0.76);
+  }
+
+  .hero__content {
+    display: grid;
+    gap: 2rem;
+    padding-top: 2.5rem;
+  }
+
+  .eyebrow {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #b45309;
+  }
+
+  .eyebrow--muted {
+    color: #64748b;
+  }
+
+  .hero__copy h1 {
+    margin: 1rem 0 0;
+    max-width: 16ch;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3.4rem, 8vw, 6.8rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+  }
+
+  .lede {
+    margin: 1.5rem 0 0;
+    max-width: 44rem;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--muted);
+  }
+
+  .hero__stats {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .hero__stats article,
+  .capability-card,
+  .workflow-card__step,
+  .closing-panel {
+    border: 1px solid var(--border);
+    border-radius: 1.6rem;
+  }
+
+  .hero__stats article {
+    padding: 1.2rem 1.25rem;
+    background: rgba(255, 255, 255, 0.74);
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.05);
+  }
+
+  .hero__stats strong,
+  .capability-card h2,
+  .workflow-card__step h2,
+  .closing-panel h2 {
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+
+  .hero__stats span,
+  .capability-card p:last-child,
+  .workflow-card__step p,
+  .workflow-card__footer p:last-child {
+    display: block;
+    margin-top: 0.55rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  .workflow-card {
+    padding: 1.5rem;
+    border-radius: 2rem;
+    background: #0f172a;
+    color: white;
+    box-shadow: 0 30px 80px rgba(15, 23, 42, 0.28);
+  }
+
+  .workflow-card__eyebrow,
+  .workflow-card__label {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #67e8f9;
+  }
+
+  .workflow-card__steps {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .workflow-card__step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .workflow-card__step span {
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: #67e8f9;
+  }
+
+  .workflow-card__step h2 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  .workflow-card__step p {
+    color: rgba(226, 232, 240, 0.82);
+  }
+
+  .workflow-card__footer {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 1.6rem;
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(103, 232, 249, 0.16);
+  }
+
+  .capabilities {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .capability-card {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.05);
+  }
+
+  .capability-card p:first-child {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #64748b;
+  }
+
+  .capability-card h2 {
+    margin: 1rem 0 0;
+    font-size: 1.7rem;
+    letter-spacing: -0.04em;
+  }
+
+  .closing-panel {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.25rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(255, 251, 235, 0.92), rgba(240, 249, 255, 0.95));
+    box-shadow: 0 18px 38px rgba(15, 23, 42, 0.06);
+  }
+
+  .closing-panel h2 {
+    margin: 0.8rem 0 0;
+    max-width: 34rem;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    letter-spacing: -0.04em;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+      transform: translate3d(0, -18px, 0);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .hero {
+      padding: 2rem;
+    }
+
+    .hero__content {
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      align-items: start;
+    }
+
+    .hero__stats,
+    .capabilities {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 899px) {
+    .hero__header,
+    .closing-panel {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero__copy h1 {
+      max-width: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .page-shell {
+      width: min(100vw - 1rem, 100%);
+      padding: 0.5rem 0 1.5rem;
+    }
+
+    .hero {
+      padding: 1.25rem;
+      border-radius: 1.5rem;
+    }
+
+    .workflow-card,
+    .capability-card,
+    .closing-panel {
+      border-radius: 1.3rem;
+    }
+
+    .hero__actions {
+      width: 100%;
+    }
+
+    .button {
+      width: 100%;
+    }
+  }
+</style>
