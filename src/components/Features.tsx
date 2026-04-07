@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Layout, Zap, Cpu, MousePointer2, Layers } from 'lucide-react';
+import { Shield, FileCode2, ImagePlus, Bot, PenTool, Cpu } from 'lucide-react';
 
 const features = [
   {
@@ -9,33 +9,33 @@ const features = [
     color: "text-indigo-500"
   },
   {
-    title: "Placement Control",
-    description: "Review page placement, signature dimensions, and appearance before the file is signed and distributed with precision preview.",
-    icon: Layout,
+    title: "JSON and XML Signing",
+    description: "Sign structured JSON and XML files from the same desktop flow used for PDFs, without switching tools or rebuilding your signing process.",
+    icon: FileCode2,
     color: "text-cyan-500"
   },
   {
-    title: "Throughput",
-    description: "Handle one document or a whole working set with progress visibility, structured output, and clear failure reporting.",
-    icon: Zap,
+    title: "Image to PDF Signing",
+    description: "Convert supported image files into signable PDFs, apply visible signatures, and enforce size limits before processing starts.",
+    icon: ImagePlus,
     color: "text-emerald-500"
+  },
+  {
+    title: "Auto-pilot Folder Watcher",
+    description: "Monitor a folder and automatically sign any new PDFs dropped into it for hands-off intake and recurring operations.",
+    icon: Bot,
+    color: "text-amber-500"
+  },
+  {
+    title: "Free-hand Signatures",
+    description: "Capture and place drawn signatures alongside certificate-backed signing workflows when a natural handwritten mark is required.",
+    icon: PenTool,
+    color: "text-rose-500"
   },
   {
     title: "Hardware Support",
     description: "Direct integration with SafeNet, HyperSecu, ProxKey, and other PKCS#11 compliant hardware tokens.",
     icon: Cpu,
-    color: "text-amber-500"
-  },
-  {
-    title: "Visual Precision",
-    description: "Drag-and-drop signature placement with real-time preview of how the final document will look.",
-    icon: MousePointer2,
-    color: "text-rose-500"
-  },
-  {
-    title: "Batch Processing",
-    description: "Process hundreds of documents in a single operation with detailed logs for audit and compliance.",
-    icon: Layers,
     color: "text-violet-500"
   }
 ];

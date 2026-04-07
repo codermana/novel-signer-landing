@@ -2,10 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import Features from '../components/Features';
-import { ArrowRight, CheckCircle2, Download, Terminal, Settings } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Download, Shield, Settings } from 'lucide-react';
 ---
 
-<Layout title="Novel Signer | Desktop PDF Signing">
+<Layout title="Novel Signer | Desktop Signing Workflows">
 	<nav class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 bg-white/70 dark:bg-slate-900/70">
 		<div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
 			<div class="flex items-center gap-2">
@@ -16,9 +16,9 @@ import { ArrowRight, CheckCircle2, Download, Terminal, Settings } from 'lucide-r
 				<a href="#features" class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Features</a>
 				<a href="#workflow" class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Workflow</a>
 				<ThemeToggle />
-				<a href="https://github.com/cm-tech/novel-signer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold hover:bg-slate-800 dark:hover:bg-slate-100 transition-all">
+				<a href="mailto:namaste@codermana.com?subject=Novel%20Signer%20Product%20Inquiry" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold hover:bg-slate-800 dark:hover:bg-slate-100 transition-all">
 					<Download className="w-4 h-4" />
-					Get App
+					Contact Us
 				</a>
 			</div>
 		</div>
@@ -36,14 +36,14 @@ import { ArrowRight, CheckCircle2, Download, Terminal, Settings } from 'lucide-r
 						<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
 						<span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
 					</span>
-					Secure PDF Execution
+					Secure Signing Automation
 				</div>
 				<h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight dark:text-white leading-[1.1]">
-					Sign regulated PDF workflows <br class="hidden md:block" />
+					Sign PDFs, JSON, XML, and image-based workflows <br class="hidden md:block" />
 					<span class="bg-gradient-to-r from-indigo-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">without the desktop friction.</span>
 				</h1>
 				<p class="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10">
-					Novel Signer combines hardware token support, certificate-based signing, visible signature preview, and batch processing in one focused desktop application.
+					Novel Signer combines hardware token support, certificate-based signing, free-hand signatures, image-to-PDF conversion with size checks, and Auto-pilot folder watching in one focused desktop application.
 				</p>
 				<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
 					<a href="#workflow" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-bold shadow-xl shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
@@ -73,7 +73,7 @@ import { ArrowRight, CheckCircle2, Download, Terminal, Settings } from 'lucide-r
 								<p class="text-sm font-bold dark:text-white">Batch Ready</p>
 							</div>
 						</div>
-						<p class="text-sm text-slate-500">All 142 documents validated and ready for PKCS#11 execution.</p>
+						<p class="text-sm text-slate-500">All 142 files validated and ready for certificate-backed execution.</p>
 					</div>
 
 					<div class="absolute -top-10 -right-10 hidden xl:block p-6 rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 max-w-xs animate-float">
@@ -83,10 +83,10 @@ import { ArrowRight, CheckCircle2, Download, Terminal, Settings } from 'lucide-r
 							</div>
 							<div>
 								<p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Mode</p>
-								<p class="text-sm font-bold dark:text-white">Hardware Token</p>
+								<p class="text-sm font-bold dark:text-white">Auto-pilot Active</p>
 							</div>
 						</div>
-						<p class="text-sm text-slate-500">SafeNet eToken 5110 detected on /dev/usb12.</p>
+						<p class="text-sm text-slate-500">Watching the intake folder and queueing new PDFs as soon as they arrive.</p>
 					</div>
 				</div>
 			</div>
@@ -97,7 +97,7 @@ import { ArrowRight, CheckCircle2, Download, Terminal, Settings } from 'lucide-r
 			<div class="text-center mb-16">
 				<h2 class="text-4xl font-bold mb-4 dark:text-white">Built for professional workflows</h2>
 				<p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-					Designed to replace fragmented signing utilities with a single, high-performance desktop environment.
+					Designed to replace fragmented signing utilities with one desktop environment for document, data, and intake automation workflows.
 				</p>
 			</div>
 			<Features />
@@ -110,7 +110,7 @@ import { ArrowRight, CheckCircle2, Download, Terminal, Settings } from 'lucide-r
 				<div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
 					<div>
 						<p class="text-indigo-400 font-bold uppercase tracking-widest text-sm mb-4">Execution Process</p>
-						<h2 class="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">From credential to export in three steps.</h2>
+						<h2 class="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">From source file to signed output in three steps.</h2>
 						<div class="space-y-8">
 							<div class="flex gap-6">
 								<div class="flex-shrink-0 w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white font-bold">01</div>
@@ -122,15 +122,15 @@ import { ArrowRight, CheckCircle2, Download, Terminal, Settings } from 'lucide-r
 							<div class="flex gap-6">
 								<div class="flex-shrink-0 w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white font-bold">02</div>
 								<div>
-									<h3 class="text-xl font-bold text-white mb-2">Choose Source PDFs</h3>
-									<p class="text-slate-400">Sign one file, a selected batch, or an entire directory depending on the volume of work.</p>
+									<h3 class="text-xl font-bold text-white mb-2">Choose the Input Flow</h3>
+									<p class="text-slate-400">Sign PDFs, JSON, or XML directly, convert images into PDFs with size limits, or point Auto-pilot at a watched folder.</p>
 								</div>
 							</div>
 							<div class="flex gap-6">
 								<div class="flex-shrink-0 w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white font-bold">03</div>
 								<div>
 									<h3 class="text-xl font-bold text-white mb-2">Review and Execute</h3>
-									<p class="text-slate-400">Set the visible signature, confirm the request, and export finished PDFs with trackable results.</p>
+									<p class="text-slate-400">Place a visible or free-hand signature, confirm the request, and export signed outputs with trackable results.</p>
 								</div>
 							</div>
 						</div>
@@ -142,7 +142,7 @@ import { ArrowRight, CheckCircle2, Download, Terminal, Settings } from 'lucide-r
 								<p class="text-indigo-400 font-bold text-sm">Enterprise Desktop Environments</p>
 							</div>
 							<p class="text-slate-400 text-sm leading-relaxed">
-								Novel Signer is the perfect fit for teams handling repeated signing work across desktop environments with hardware-backed credentials.
+								Novel Signer is the right fit for teams handling repeated signing work across desktop environments, mixed file types, and monitored intake folders.
 							</p>
 						</div>
 					</div>
@@ -169,22 +169,80 @@ import { ArrowRight, CheckCircle2, Download, Terminal, Settings } from 'lucide-r
 			</div>
 		</section>
 
+		<!-- Security Section -->
+		<section id="security" class="max-w-7xl mx-auto px-4 mt-40">
+			<div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-stretch">
+				<div class="rounded-[2.5rem] border border-slate-200/70 dark:border-slate-800/70 bg-white/70 dark:bg-slate-900/60 backdrop-blur-sm shadow-xl p-8 md:p-12">
+					<div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-sm font-semibold border border-emerald-500/20 mb-6">
+						<Shield className="w-4 h-4" />
+						Security
+					</div>
+					<h2 class="text-4xl md:text-5xl font-bold tracking-tight dark:text-white mb-6">Built for controlled signing environments.</h2>
+					<p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mb-8">
+						Novel Signer is designed for teams that need local control over files, deliberate credential use, and repeatable signing workflows without pushing sensitive signing operations into a browser tab.
+					</p>
+					<div class="grid sm:grid-cols-2 gap-5">
+						<div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/50 p-5">
+							<h3 class="text-lg font-bold dark:text-white mb-2">Local File Handling</h3>
+							<p class="text-slate-600 dark:text-slate-400">Source files, converted images, and signed outputs stay within your desktop workflow unless you explicitly share them.</p>
+						</div>
+						<div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/50 p-5">
+							<h3 class="text-lg font-bold dark:text-white mb-2">Credential-Aware Signing</h3>
+							<p class="text-slate-600 dark:text-slate-400">Use PKCS#11 hardware tokens or certificate files in a dedicated signing flow built around operator validation and review.</p>
+						</div>
+						<div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/50 p-5">
+							<h3 class="text-lg font-bold dark:text-white mb-2">Input Guardrails</h3>
+							<p class="text-slate-600 dark:text-slate-400">Apply size limits for image-to-PDF intake and validate inputs before execution to reduce bad batch runs and avoidable processing failures.</p>
+						</div>
+						<div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/50 p-5">
+							<h3 class="text-lg font-bold dark:text-white mb-2">Traceable Results</h3>
+							<p class="text-slate-600 dark:text-slate-400">Review placement, confirm actions, and track outcomes across manual and Auto-pilot signing runs with visible execution feedback.</p>
+						</div>
+					</div>
+				</div>
+				<div class="rounded-[2.5rem] bg-slate-900 dark:bg-slate-950 border border-slate-800 overflow-hidden p-8 md:p-10 relative">
+					<div class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-cyan-500/10"></div>
+					<div class="relative z-10">
+						<p class="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-4">Operational Posture</p>
+						<ul class="space-y-5 text-slate-300">
+							<li class="flex gap-3">
+								<CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-1" />
+								<span>Desktop-first execution keeps signing workflows closer to enterprise-managed devices and operator controls.</span>
+							</li>
+							<li class="flex gap-3">
+								<CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-1" />
+								<span>Visible preview and free-hand placement reduce mistakes before a signature is committed to output.</span>
+							</li>
+							<li class="flex gap-3">
+								<CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-1" />
+								<span>Folder watcher automation supports repeatable intake while keeping review and downstream output flows predictable.</span>
+							</li>
+							<li class="flex gap-3">
+								<CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-1" />
+								<span>Support requests can be sent to <a href="mailto:namaste@codermana.com?subject=Novel%20Signer%20Security%20Question" class="text-white underline decoration-white/30 underline-offset-4 hover:decoration-white">namaste@codermana.com</a> for security and deployment discussions.</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<!-- CTA Section -->
 		<section class="max-w-7xl mx-auto px-4 mt-40 text-center">
 			<div class="relative py-24 px-8 rounded-[3rem] bg-gradient-to-br from-indigo-600 to-cyan-500 overflow-hidden shadow-2xl">
 				<div class="absolute inset-0 bg-grid-white/10 [mask-image:radial-gradient(white,transparent)]"></div>
 				<div class="relative z-10">
-					<h2 class="text-4xl md:text-6xl font-extrabold text-white mb-6">Ready to streamline your signing?</h2>
+					<h2 class="text-4xl md:text-6xl font-extrabold text-white mb-6">Ready to streamline every signing path?</h2>
 					<p class="text-xl text-indigo-50 max-w-2xl mx-auto mb-10 leading-relaxed">
-						Download Novel Signer today and experience the future of professional PDF execution.
+						Download Novel Signer today and bring PDFs, structured files, scanned images, and watched-folder signing into one desktop workflow.
 					</p>
 					<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-						<a href="https://github.com/cm-tech/novel-signer" class="w-full sm:w-auto px-10 py-5 rounded-2xl bg-white text-indigo-600 font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
-							Download for Desktop
+						<a href="mailto:namaste@codermana.com?subject=Novel%20Signer%20Product%20Inquiry" class="w-full sm:w-auto px-10 py-5 rounded-2xl bg-white text-indigo-600 font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+							Contact Sales
 							<Download className="w-6 h-6" />
 						</a>
-						<a href="#features" class="w-full sm:w-auto px-10 py-5 rounded-2xl bg-indigo-700/30 text-white border border-white/20 font-bold text-lg hover:bg-indigo-700/40 transition-all">
-							View Documentation
+						<a href="mailto:namaste@codermana.com?subject=Novel%20Signer%20Support%20Request" class="w-full sm:w-auto px-10 py-5 rounded-2xl bg-indigo-700/30 text-white border border-white/20 font-bold text-lg hover:bg-indigo-700/40 transition-all">
+							Email Support
 						</a>
 					</div>
 				</div>
@@ -201,7 +259,7 @@ import { ArrowRight, CheckCircle2, Download, Terminal, Settings } from 'lucide-r
 						<span class="font-bold text-lg tracking-tight dark:text-white">Novel Signer</span>
 					</div>
 					<p class="text-slate-500 dark:text-slate-400 max-w-sm leading-relaxed">
-						The focused desktop environment for professional PDF signing workflows. Built for speed, security, and compliance.
+						The focused desktop environment for professional signing workflows across PDFs, structured files, images, and automated intake.
 					</p>
 				</div>
 				<div>
@@ -209,23 +267,21 @@ import { ArrowRight, CheckCircle2, Download, Terminal, Settings } from 'lucide-r
 					<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
 						<li><a href="#features" class="hover:text-indigo-600 transition-colors">Features</a></li>
 						<li><a href="#workflow" class="hover:text-indigo-600 transition-colors">Workflow</a></li>
-						<li><a href="#" class="hover:text-indigo-600 transition-colors">Security</a></li>
+						<li><a href="#security" class="hover:text-indigo-600 transition-colors">Security</a></li>
 					</ul>
 				</div>
 				<div>
 					<h4 class="font-bold mb-6 dark:text-white uppercase text-xs tracking-widest">Connect</h4>
 					<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
-						<li><a href="https://github.com/cm-tech/novel-signer" class="hover:text-indigo-600 transition-colors">GitHub</a></li>
-						<li><a href="#" class="hover:text-indigo-600 transition-colors">Documentation</a></li>
-						<li><a href="#" class="hover:text-indigo-600 transition-colors">Support</a></li>
+						<li><a href="mailto:namaste@codermana.com?subject=Novel%20Signer%20Support%20Request" class="hover:text-indigo-600 transition-colors">Support</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:row items-center justify-between gap-4">
 				<p class="text-sm text-slate-500 dark:text-slate-400">© {new Date().getFullYear()} CoderMana Technologies Private Limited. All rights reserved.</p>
 				<div class="flex gap-8 text-sm text-slate-500 dark:text-slate-400">
-					<a href="#" class="hover:text-indigo-600 transition-colors">Privacy Policy</a>
-					<a href="#" class="hover:text-indigo-600 transition-colors">Terms of Service</a>
+					<a href="/privacy-policy" class="hover:text-indigo-600 transition-colors">Privacy Policy</a>
+					<a href="/terms-of-service" class="hover:text-indigo-600 transition-colors">Terms of Service</a>
 				</div>
 			</div>
 		</div>
